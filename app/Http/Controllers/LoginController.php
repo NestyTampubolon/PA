@@ -52,15 +52,17 @@ class LoginController extends Controller
             $data = $request->input();
             $request->session()->put('usernamekaryawan',$data['username']);
 
-            // $admin= Karyawan::where('username',$request->username)
-            //  ->where('PASSWORD',$request->PASSWORD)
-            //  ->where('role','1')
-            // ->get();
-            //     if(count($admin)!=0){
-            //         return redirect('/daftarmenu');
-            //     }else{
-            //         return redirect('/daftarpemesanan');
-            //     }
+            $admin= Karyawan::where('username',$request->username)
+             ->where('PASSWORD',$request->PASSWORD)
+             ->where('role','1')
+            ->get();
+            // var_dump($admin);
+            // die();
+                if(count($admin)!=0){
+                    return redirect('/daftarmenu');
+                }else{
+                    return redirect('/daftarpemesanan');
+                }
 
 
             // $request->session()->put('role',$karyawan->role);

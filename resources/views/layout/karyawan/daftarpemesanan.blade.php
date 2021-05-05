@@ -1,4 +1,4 @@
-@include('layout.admin.navadmin')
+@include('layout.karyawan.navkaryawan')
 			<!-- Section 1 -->
 			<div class="tabel1">
 					<div class="container-fluid">
@@ -61,4 +61,4 @@
 				</div>
 
 
-@include('layout.admin.footeradmin')
+@include('layout.karyawan.footerkaryawan')

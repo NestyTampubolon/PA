@@ -16,7 +16,7 @@ class DaftarpemesananController extends Controller
         ->join('pemesanan_detail', 'pemesanan.id_pemesanan','=','pemesanan_detail.id_pemesanan')
         ->join('customer', 'customer.id_customer','=','pemesanan.id_customer')
         ->get();
-        return view('layout.admin.daftarpemesanan',compact('pemesanan','joinpemesanan'));
+        return view('layout.karyawan.daftarpemesanan',compact('pemesanan','joinpemesanan'));
     }
 
     public function detail($id_pemesanan){
@@ -28,7 +28,7 @@ class DaftarpemesananController extends Controller
                     ->select('pemesanan_detail.*','produk.*')
                     ->where('pemesanan_detail.id_pemesanan','=',$id_pemesanan)
                     ->get();
-        return view('layout.admin.detailpemesanan',compact('pemesanandetail','produk','daftarjoin'));
+        return view('layout.karyawan.detailpemesanan',compact('pemesanandetail','produk','daftarjoin'));
     }
 
     public function update(Request $request, $id_pemesanan){
