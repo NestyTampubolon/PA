@@ -1,5 +1,8 @@
 @include('layout.nav')
-
+<style>
+img{
+margin:30px;
+}</style>
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -8,6 +11,7 @@
           <h2>Contact</h2>
           <p>Contact Us</p>
         </div>
+        <img src="{{asset('profil')}}/tobatio1.jpeg" alt="" width="50%" height="20%">
       </div>
 
       <div data-aos="fade-up">

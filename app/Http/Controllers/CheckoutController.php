@@ -19,9 +19,21 @@ class CheckoutController extends Controller
         ->join('produk', 'produk.id_produk','=','keranjang.id_produk')
         ->where('customer.id_customer','=',session('id'))
         ->get();
-        // var_dump($pesan);
-        // die;
-        return view('layout.checkout',compact('pemesanan','pesan'));
+        $pembayaran = DB::table('pemesanan')
+        ->select('customer.*','customer.nama as namacustomer','pemesanan.*' )
+        ->join('customer', 'pemesanan.id_customer','=','customer.id_customer')
+        ->where('customer.id_customer','=',session('id'))
+        ->first();
+        
+        if(count($pesan) == 0){
+            return redirect('/');
+        } else {
+            
+            return view('layout.checkout',compact('pemesanan','pesan','pembayaran'));
+        }
+
+
+      
 
 
 
@@ -49,6 +61,9 @@ class CheckoutController extends Controller
         $pemesanan->id_customer =  session('id');
         $pemesanan->tanggal_pemesanan = now();
         $pemesanan->total_harga = $temp;
+        $name = $request->file('bukti_pembayaran')->getClientOriginalName();
+        $request->file('bukti_pembayaran')->move('bukti_pembayaran',$name);
+        $pemesanan->bukti_pembayaran = $name;
         $laporan = new LaporanKeuangan();
         $laporan->tanggal_laporan = now();
         $laporan->save();

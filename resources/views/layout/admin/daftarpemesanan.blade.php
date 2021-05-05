@@ -43,7 +43,8 @@
 											
 											</td>
 											<td>{{$joinpemesanan->nama}}</td>
-											<td><img src="" alt=""></td>
+											<td><img src="{{url('bukti_pembayaran/'.$joinpemesanan->bukti_pembayaran)}}" width="80px" height="80px" alt="">
+
 
 											<td width="200px"><button type="button"  class="btn btn-warning" onclick="window.location.href='pemesanandetail/{{$joinpemesanan->id_pemesanan}}'"><i class="fas fa-info-circle"  ></i>
                                         Detail</button>

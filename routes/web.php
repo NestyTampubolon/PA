@@ -13,7 +13,6 @@ use App\Http\Controllers\VerifikasiakunController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\GalleryController;
 
@@ -39,8 +38,7 @@ Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('p
 Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');
 Route::get('checkout/{id_customer}',[CheckoutController::class,'index']);
 
-Route::get('pembayaran',[PembayaranController::class,'index']);
-Route::post('pembayaran/store', [PembayaranController::class, 'store'])->name('pembayaran.store');
+
 
 
 Route::get('gallery', [GalleryController::class, 'index']);
@@ -72,7 +70,6 @@ Route::get('registrasi', [LoginController::class, 'registrasi']);
 Route::get('logout', [LoginController::class, 'logout']);
 
 
-Route::group(['middleware'=>['role']],function(){
               
             Route::get('laporankeuangan', [LaporankeuanganController::class,'index']);
             Route::post('laporankeuangan/store', [LaporankeuanganController::class, 'store'])->name('laporankeuangan.store');
@@ -99,7 +96,7 @@ Route::group(['middleware'=>['role']],function(){
             Route::get('informasi/delete/{id_informasi}', [InformasiController::class, 'delete'])->name('informasi.delete');
 
 
-});
+
 
 
 

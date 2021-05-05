@@ -65,7 +65,6 @@
       <li class="dropdown" style="list-style-type: none;"><a href="#" >Welcome <span>  &nbsp {{session('username')}}</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Profile</a></li>
-                  <li><a href="/pembayaran">Pembayaran</a></li>
                   <li><a href="/logout">Logout</a></li>     
                 </ul>
       </nav>
