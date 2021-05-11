@@ -11,10 +11,9 @@ class DaftarpemesananController extends Controller
 {
     public function index(){
         $pemesanan = Pemesanan::all();
-       
         $joinpemesanan = DB::table('pemesanan')
-        ->join('pemesanan_detail', 'pemesanan.id_pemesanan','=','pemesanan_detail.id_pemesanan')
         ->join('customer', 'customer.id_customer','=','pemesanan.id_customer')
+        ->select('customer.nama','pemesanan.*')
         ->get();
         return view('layout.karyawan.daftarpemesanan',compact('pemesanan','joinpemesanan'));
     }
@@ -34,8 +33,18 @@ class DaftarpemesananController extends Controller
     public function update(Request $request, $id_pemesanan){
         $update = Pemesanan::find($id_pemesanan);
         $update->keterangan = $request->keterangan;
-        $update -> save();
-        return redirect('daftarpemesanan');         
+        $update-> save();
+        return redirect('daftarpemesanan');  
+        
+        $ceklaporan = LaporanKeuangan::where('tanggal_laporan',now())
+        ->get();
+        if(count($ceklaporan)!= 0){ 
+        }else{
+            $laporan = new LaporanKeuangan();
+            $laporan->tanggal_laporan = now();
+            $laporan->save();
+        }
+  
 
     }
     

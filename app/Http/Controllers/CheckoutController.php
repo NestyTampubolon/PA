@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         ->first();
         
         if(count($pesan) == 0){
-            return redirect('/');
+            return redirect('/menu');
         } else {
             
             return view('layout.checkout',compact('pemesanan','pesan','pembayaran'));
@@ -64,9 +64,6 @@ class CheckoutController extends Controller
         $name = $request->file('bukti_pembayaran')->getClientOriginalName();
         $request->file('bukti_pembayaran')->move('bukti_pembayaran',$name);
         $pemesanan->bukti_pembayaran = $name;
-        $laporan = new LaporanKeuangan();
-        $laporan->tanggal_laporan = now();
-        $laporan->save();
         if( $pemesanan->save()){
             
             foreach($keranjang as $keranjangs){

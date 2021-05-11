@@ -49,8 +49,6 @@
                 </div>
                 </div>
                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                <button type="batal" class="btn btn-danger" onclick="window.location.href='/'" class="justify-content-between"><i class="fas fa-times"></i> Batal</button>
-				<button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Kirim</button>
                
                 </div>
 				

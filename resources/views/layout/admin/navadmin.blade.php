@@ -49,9 +49,6 @@
 			
 				@endif
 				<li>
-					<a class="scroll-link" href="/daftarpemesanan"><i class="fas fa-cog"></i>  Daftar Pemesanan</a>
-				</li>
-				<li>
 					<a class="scroll-link" href="/laporankeuangan"><i class="fas fa-book"></i>  Laporan Keuangan</a>
 				</li>
 				<li>

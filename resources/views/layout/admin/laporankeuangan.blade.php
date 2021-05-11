@@ -9,13 +9,6 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-								<form action="{{route('laporankeuangan.store')}}" method="post" enctype="multipart/form-data">
-								{{ csrf_field() }}
-								<div class="col-md-4" style="margin:10px">
-									<input  type="date" required="required" name="tanggal_laporan" class=" col-md-6 "value="">
-									<button type="submit" class="btn btn-secondary col-md-4">Pilih Tanggal</button>
-									</form>
-									</div>
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>

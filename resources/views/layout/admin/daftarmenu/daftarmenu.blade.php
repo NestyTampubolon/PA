@@ -36,7 +36,6 @@
                                         Edit</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-trash-alt"></i>
                                         Hapus</button> 
-                                        
                                 </td>
                             </tr>
                             @endforeach

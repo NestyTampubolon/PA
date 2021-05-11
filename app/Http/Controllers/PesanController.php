@@ -33,7 +33,7 @@ class PesanController extends Controller
         $keranjang->id_customer = session('id');
         $keranjang->save();
 
-        return redirect()->back();
+        return redirect('/menu');
     }
    
 }

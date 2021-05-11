@@ -20,6 +20,7 @@ class LoginController extends Controller
         ->where('PASSWORD',$request->PASSWORD)
         ->where('Keterangan','Verifikasi')
         ->get();
+        
         $customerid = DB::table('customer')
         ->where('username', '=', $request->username)
         ->where('PASSWORD', '=', $request->PASSWORD)
