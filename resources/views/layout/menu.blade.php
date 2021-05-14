@@ -45,11 +45,7 @@
               <h5 class="card-title"><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block; margin: 5px auto;" alt=""></h5>
               <h5 class="card-subtitle mb-4 ">{{$produk->nama}}</h5>
               <p class="card-text">@currency($produk->harga)</p>
-              @if(session('username'))
               <a href="menu/pesan/{{$produk->id_produk}}" class="btn btn-success">Beli</a>
-              @else 
-              <a href="login" class="btn btn-success">Beli</a>
-              @endif
             </div>
           </div>
           @endforeach

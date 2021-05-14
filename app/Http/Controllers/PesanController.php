@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\DB;
 class PesanController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index($id){
         $produks = Produk::find($id);
         $pesan = DB::table('keranjang')
@@ -30,7 +35,7 @@ class PesanController extends Controller
         $keranjang->id_produk = $request->input('id_produk');
         $keranjang->quantity = $request->input('quantity');
         $keranjang->total = $request->input('quantity') * $request->input('harga');
-        $keranjang->id_customer = session('id');
+        $keranjang->id_customer = auth()->id();
         $keranjang->save();
 
         return redirect('/menu');

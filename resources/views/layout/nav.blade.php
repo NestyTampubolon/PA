@@ -49,27 +49,44 @@
           <li><a class="nav-link scrollto" href="/menu">Menu</a></li>
           <li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-          @if(session('username'))
-          <li><a class="nav-link scrollto" href="/checkout/{{session('id')}}"><i class="cart bi bi-cart4"></i></a></li>
-          @else 
-          <li><a class="nav-link scrollto" href="/login"><i class="cart bi bi-cart4"></i></a></li>
-          @endif
+          @guest
+          <li><a class="nav-link scrollto" href="/login"><i class="bi bi-cart4"></i>&nbsp Checkout</a></li>  
+           @else
+          <li><a class="nav-link scrollto" href="/checkout/{{ Auth::user()->user_id}}"><i class="bi bi-cart4"></i>&nbsp Checkout</a></li> 
+          @endguest
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       
       </nav><!-- .navbar -->
      
       <!-- <a href="/login" class="book-a-table-btn scrollto d-none d-lg-flex">LOGIN</a> -->
-      @if(session('username'))
-      <nav id="navbar" class="navbar order-last order-lg-0">
-      <li class="dropdown" style="list-style-type: none;"><a href="#" >Welcome <span>  &nbsp {{session('username')}}</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="/logout">Logout</a></li>     
-                </ul>
-      </nav>
-   @else 
-   <a href="/login" class="book-a-table-btn scrollto d-none d-lg-flex">LOGIN</a>
-   @endif
+      @guest
+                    @if (Route::has('login'))
+                                    <a class="nav-link book-a-table-btn scrollto d-none d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
+                            @endif
+                        @else
+                        <nav id="navbar" class="navbar order-last order-lg-0">
+                           <li class="dropdown" style="list-style-type: none;"><a href="#"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                             <ul>
+                              <li>    
+                                <div class="dropdown">
+                                    <a class="dropdown" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                              </li>     
+                           </ul>
+                      </nav>
+                        @endguest
+ 
     </div>
   </header><!-- End Header -->
 

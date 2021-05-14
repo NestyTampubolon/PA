@@ -18,11 +18,10 @@ class LaporankeuanganController extends Controller
                 ->get();
         $totaljoin = DB::table('pemesanan')
                 ->join('laporan_keuangan', 'pemesanan.tanggal_pemesanan','=','laporan_keuangan.tanggal_laporan')
-                ->select(DB::raw('sum(pemesanan.total_harga) as harga'),'laporan_keuangan.*') 
-                ->groupBy('pemesanan.tanggal_pemesanan')
-                ->where('pemesanan.keterangan','=','Selesai')                                          
+                ->select(DB::raw('sum(pemesanan.total_harga) as hargatotal'),'laporan_keuangan.*')   
+                ->groupBy('pemesanan.tanggal_pemesanan') 
+                ->where('pemesanan.keterangan','=','Selesai')            
                 ->get();
-            
         return view('layout.admin.laporankeuangan',compact('laporan','totaljoin'));
     }
 

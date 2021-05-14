@@ -7,13 +7,15 @@ use App\Models\Pemesanan;
 use App\Models\Produk;
 use App\Models\PemesananDetail;
 use Illuminate\Support\Facades\DB;
+use App\Models\LaporanKeuangan;
 class DaftarpemesananController extends Controller
 {
     public function index(){
         $pemesanan = Pemesanan::all();
         $joinpemesanan = DB::table('pemesanan')
-        ->join('customer', 'customer.id_customer','=','pemesanan.id_customer')
-        ->select('customer.nama','pemesanan.*')
+        ->join('users', 'users.user_id','=','pemesanan.id_customer')
+        ->select('users.name','pemesanan.*')
+        ->orderBy('created_at', 'desc')
         ->get();
         return view('layout.karyawan.daftarpemesanan',compact('pemesanan','joinpemesanan'));
     }
@@ -34,17 +36,25 @@ class DaftarpemesananController extends Controller
         $update = Pemesanan::find($id_pemesanan);
         $update->keterangan = $request->keterangan;
         $update-> save();
-        return redirect('daftarpemesanan');  
+    
+        $temp = 0;
+        $cektanggal = LaporanKeuangan::all();
+        $cek = LaporanKeuangan::where('tanggal_laporan','=',now())->first();
+            if($cek === 0){
+                 $temp == 1;
+            }else{
+               
+            }
+    
+
         
-        $ceklaporan = LaporanKeuangan::where('tanggal_laporan',now())
-        ->get();
-        if(count($ceklaporan)!= 0){ 
-        }else{
+        if($temp == 1){
             $laporan = new LaporanKeuangan();
             $laporan->tanggal_laporan = now();
             $laporan->save();
         }
-  
+        
+        return redirect('daftarpemesanan');  
 
     }
     

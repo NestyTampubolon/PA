@@ -15,7 +15,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Username</th>
+                                <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Usia</th>
                                 <th>No. Handphone</th>
@@ -27,14 +27,14 @@
                         <tbody>
                         @foreach($customer as $customer)
                             <tr>
-                                <td>{{$customer->id_customer}}</td>
-                                <td>{{$customer->nama}}</td>
-                                <td>{{$customer->username}}</td>
+                                <td>{{$customer->user_id}}</td>
+                                <td>{{$customer->name}}</td>
+                                <td>{{$customer->email}}</td>
                                 <td>{{$customer->jenis_kelamin}}</td>
                                 <td>{{$customer->usia}} tahun</td>
                                 <td>{{$customer->nomor_handphone}}</td>
                                 <td>{{$customer->alamat}}</td>
-                                <td><form action="{{route('verifikasiakun.update',$customer->id_customer)}}" method="post" enctype="multipart/form-data">
+                                <td><form action="{{route('verifikasiakun.update',$customer->user_id)}}" method="post" enctype="multipart/form-data">
             										{{ csrf_field() }}
 													<div class=" row">
 												<div class="col">

@@ -9,6 +9,7 @@ use Illuminate\Http\UploadedFile;
 class DaftarmenuController extends Controller
 {
     //
+
     public function index(){
         $produks = Produk::all();
         return view('layout.admin.daftarmenu.daftarmenu',compact('produks'));

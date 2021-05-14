@@ -35,8 +35,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/registrasi">Daftar Akun</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">Daftar Akun</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/pembayaran">Media Pembayaran</a></li>
             </ul>
           </div>

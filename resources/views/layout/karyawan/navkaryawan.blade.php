@@ -44,15 +44,23 @@
 
 			<ul class="list-unstyled menu-elements">
 			
-			@if(session('usernamekaryawan'))
-					<li><a class="nav-link scrollto"><i class="cart bi bi-cart4"></i>Welcome  {{session('usernamekaryawan')}} </a></li>
-			
-				@endif
+			@guest
+				@else
+					<li class="nav-link scrollto"><a href="#" >
+					<i class="cart bi bi-cart4"></i> Welcome, {{ Auth::user()->name }}</a> </li>
+			@endguest
+ 
 				<li>
 					<a class="scroll-link" href="/daftarpemesanan"><i class="fas fa-cog"></i>  Daftar Pemesanan</a>
 				</li>
 				<li>
-					<a class="scroll-link" href="/logout"><i class="fas fa-user"></i>Log Out</a>
+				<a class="scroll-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+													 <i class="fas fa-user"></i>{{ __('Logout') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 				</li>
 			
 			</ul>

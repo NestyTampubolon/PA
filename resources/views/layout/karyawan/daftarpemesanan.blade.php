@@ -42,14 +42,24 @@
 											</div>
 											
 											</td>
-											<td>{{$joinpemesanans->nama}}</td>
-											<td><img src="{{url('bukti_pembayaran/'.$joinpemesanans->bukti_pembayaran)}}" width="80px" height="80px" alt="">
+											<td>{{$joinpemesanans->name}}</td>
+											<td><img src="{{url('bukti_pembayaran/'.$joinpemesanans->bukti_pembayaran)}}" width="80px" height="80px" alt="" data-bs-toggle="modal" data-bs-target="#myModal{{$joinpemesanans->id_pemesanan}}">
 
 
 											<td width="200px"><button type="button"  class="btn btn-warning" onclick="window.location.href='pemesanandetail/{{$joinpemesanans->id_pemesanan}}'"><i class="fas fa-info-circle"  ></i>
                                         Detail</button>
 										<button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Simpan</button>
 										</form></td>
+
+												<div id="myModal{{$joinpemesanans->id_pemesanan}}" class="modal fade" tabindex="-1" role="dialog">
+														<div class="modal-dialog modal-dialog-centered">
+														<div class="modal-content">
+															<div class="modal-body">
+																<img src="{{url('bukti_pembayaran/'.$joinpemesanans->bukti_pembayaran)}}"  class="img-fluid" >
+															</div>
+														</div>
+														</div>
+													</div>
 											</tr>
 										@endforeach
 										</tbody>
@@ -60,5 +70,21 @@
 					</div>
 				</div>
 
+<!-- Modal -->
+<div class="modal fade modal-foto" id="myModal{{$joinpemesanans->id_pemesanan}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bukti Pembayaran</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <img src="{{url('bukti_pembayaran/'.$joinpemesanans->bukti_pembayaran)}}"  class="img-fluid" width="50%" height="50%">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 
 @include('layout.karyawan.footerkaryawan')

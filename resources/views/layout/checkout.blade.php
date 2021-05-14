@@ -1,7 +1,6 @@
 @include('layout.nav')
 <!-- ======= Check out Section ======= -->
 <div style="margin:100px">
-@if(Session::has('username'))
 
 
 <div class="row justify-content-center  menu-item filter-Customer">
@@ -33,14 +32,17 @@
                        <label for="">{{$pembayaran->alamat}}</label>
                     </div>
                 </div>
+                <form action="{{route('checkout.storepemesanan')}}" method="post" enctype="multipart/form-data">
+                     {{ csrf_field() }}
+                @foreach($total as $totals)
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Total Harga</label>
                     <div class="col-sm-9">
-                       <label for="">@currency($pembayaran->total_harga)</label>
+                       <label for="">@currency($totals->total)</label>
+                       <input type="hidden" name="total_harga" value="{{$totals->total}}">
                     </div>
                 </div>
-                <form action="{{route('checkout.storepemesanan')}}" method="post" enctype="multipart/form-data">
-                     {{ csrf_field() }}
+                @endforeach
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Bukti Pembayaran</label>
                     <div class="col-sm-9">
@@ -89,7 +91,5 @@
         </div>
 
       
-@endif
-
 <!-- End Contact Section -->
 @include('layout.footer')

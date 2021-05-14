@@ -26,18 +26,18 @@
 											<tr>
 												<td>{{$totaljoin->id_laporan}}</td>
 												<td>{{$totaljoin->tanggal_laporan}}</td>
-												<td>@currency($totaljoin->harga)</td>
+												<td>@currency($totaljoin->hargatotal)</td>
 												<td><form action="{{route('laporankeuangan.update',$totaljoin->id_laporan)}}" method="post" enctype="multipart/form-data">
 																{{ csrf_field() }}
 																<div class=" row">
-																<input type="hidden" name="pemasukan" value="{{$totaljoin->harga}}">
+																<input type="hidden" name="pemasukan" value="{{$totaljoin->hargatotal}}">
 															<div class="col">
 																	<input type="text" required="required" name="pengeluaran" class="form-control " id="dengan-rupiah" type-currency="IDR" value="{{$totaljoin->pengeluaran}}">
 															</div>
 														</div></td>
 															<td>
-															<input type="hidden" name="keuntungan" value="{{$totaljoin->harga - $totaljoin->pengeluaran}}">
-															@currency($totaljoin->harga - $totaljoin->pengeluaran)</td>
+															<input type="hidden" name="keuntungan" value="{{$totaljoin->hargatotal - $totaljoin->pengeluaran}}">
+															@currency($totaljoin->hargatotal - $totaljoin->pengeluaran)</td>
 															<td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Simpan</button>
 													</form></td>
 											

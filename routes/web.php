@@ -33,71 +33,54 @@ Route::get('about', [AboutController::class, 'index']);
 
 // Menu
 Route::get('menu',[ProdukController::class,'index']);
-Route::get('menu/pesan/{id_produk}',[PesanController::class,'index'])->name('menu.pesan');
-Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('pesan.pesanan');
-Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');
-Route::get('checkout/{id_customer}',[CheckoutController::class,'index']);
-
-
-
 
 Route::get('gallery', [GalleryController::class, 'index']);
-
 
 Route::get('contact', function () {
     return view('layout.contact');
 });
 
-Route::get('registrasiakun', [RegistrasiController::class, 'index']);
-Route::post('registrasiakun/store', [RegistrasiController::class, 'store'])->name('registrasiakun.store');
 
-
-
+Route::group(['middleware' => ['auth','role']], function () {
 Route::get('daftarpemesanan', [DaftarpemesananController::class, 'index']);
 Route::post('daftarpemesanan/{id_pemesanan}', [DaftarpemesananController::class, 'update'])->name('daftarpemesanan.update');
 Route::get('pemesanandetail/{id_pemesanan}', [DaftarpemesananController::class, 'detail']);
 
-
-
-Route::get('/coba', function () {
-    return view('layout.admin.coba');
 });
 
-Route::get('login', [LoginController::class, 'index']);
-Route::post('login/cekcustomer', [LoginController::class, 'logincustomer'])->name('login.cekcustomer');
-Route::post('login/cekkaryawan', [LoginController::class, 'loginkaryawan'])->name('login.cekkaryawan');
-Route::get('registrasi', [LoginController::class, 'registrasi']);
-Route::get('logout', [LoginController::class, 'logout']);
+Route::group(['middleware' => ['auth', 'admin']], function () {       
+        Route::get('laporankeuangan', [LaporankeuanganController::class,'index']);
+        Route::post('laporankeuangan/store', [LaporankeuanganController::class, 'store'])->name('laporankeuangan.store');
+        Route::post('laporankeuangan/{id_laporan}', [LaporankeuanganController::class, 'update'])->name('laporankeuangan.update');
 
+        Route::get('daftarmenu', [DaftarmenuController::class, 'index']);
+        Route::get('tambahmenu', [DaftarmenuController::class, 'tambah']);
+        Route::get('edit/{id_produk}', [DaftarmenuController::class, 'edit']);
+        Route::post('daftarmenu/store', [DaftarmenuController::class, 'store']);
+        Route::post('daftarmenu/update/{id_produk}', [DaftarmenuController::class, 'update'])->name('daftarmenu.update');
+        Route::get('daftarmenu/delete/{id_produk}', [DaftarmenuController::class, 'delete'])->name('daftarmenu.delete');
 
-              
-            Route::get('laporankeuangan', [LaporankeuanganController::class,'index']);
-            Route::post('laporankeuangan/store', [LaporankeuanganController::class, 'store'])->name('laporankeuangan.store');
-            Route::post('laporankeuangan/{id_laporan}', [LaporankeuanganController::class, 'update'])->name('laporankeuangan.update');
+        Route::get('verifikasiakun', [VerifikasiakunController::class, 'index']);
+        Route::post('verifikasiakun/{id_customer}', [VerifikasiakunController::class, 'update'])->name('verifikasiakun.update');
+        Route::get('verifikasiakun/delete/{id_customer}', [VerifikasiakunController::class, 'delete'])->name('verifikasiakun.delete');
 
+        Route::get('informasi', [InformasiController::class, 'index']);
+        Route::post('informasi/update/{id_informasi}', [InformasiController::class, 'update'])->name('informasi.update');
+        Route::get('informasi/{id_informasi}', [InformasiController::class, 'edit']);
+        Route::get('tambahinformasi', [InformasiController::class, 'tambah']);
+        Route::post('tambahinformasi/store', [InformasiController::class, 'store'])->name('informasi.store');
+        Route::get('informasi/delete/{id_informasi}', [InformasiController::class, 'delete'])->name('informasi.delete');
+});
 
-            Route::get('daftarmenu', [DaftarmenuController::class, 'index']);
-            Route::get('tambahmenu', [DaftarmenuController::class, 'tambah']);
-            Route::get('edit/{id_produk}', [DaftarmenuController::class, 'edit']);
-            Route::post('daftarmenu/store', [DaftarmenuController::class, 'store']);
-            Route::post('daftarmenu/update/{id_produk}', [DaftarmenuController::class, 'update'])->name('daftarmenu.update');
-            Route::get('daftarmenu/delete/{id_produk}', [DaftarmenuController::class, 'delete'])->name('daftarmenu.delete');
+Auth::routes();
 
-            Route::get('verifikasiakun', [VerifikasiakunController::class, 'index']);
-            Route::post('verifikasiakun/{id_customer}', [VerifikasiakunController::class, 'update'])->name('verifikasiakun.update');
-            Route::get('verifikasiakun/delete/{id_customer}', [VerifikasiakunController::class, 'delete'])->name('verifikasiakun.delete');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-            Route::get('informasi', [InformasiController::class, 'index']);
-            Route::post('informasi/update/{id_informasi}', [InformasiController::class, 'update'])->name('informasi.update');
-            Route::get('informasi/{id_informasi}', [InformasiController::class, 'edit']);
-            Route::get('tambahinformasi', [InformasiController::class, 'tambah']);
-            Route::post('tambahinformasi/store', [InformasiController::class, 'store'])->name('informasi.store');
-            Route::get('informasi/delete/{id_informasi}', [InformasiController::class, 'delete'])->name('informasi.delete');
-
-
-
-
-
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('menu/pesan/{id_produk}',[PesanController::class,'index'])->name('menu.pesan');
+    Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('pesan.pesanan');
+    Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');
+    Route::get('checkout/{id_customer}',[CheckoutController::class,'index']);
+});
 
 ?>

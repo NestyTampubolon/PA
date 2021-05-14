@@ -1,5 +1,4 @@
-
-@include('layout.admin.navadmin')
+@include('layout.karyawan.navkaryawan')
 
 <div class="edit">
     <div class="card">
@@ -35,4 +34,4 @@
 </div>
 
 
-@include('layout.admin.footeradmin')
+@include('layout.karyawan.footerkaryawan')

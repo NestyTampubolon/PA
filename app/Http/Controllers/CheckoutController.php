@@ -8,33 +8,37 @@ use App\Models\Keranjang;
 use App\Models\PemesananDetail;
 use App\Models\LaporanKeuangan;
 use Illuminate\Support\Facades\DB;
+use Auth;
 class CheckoutController extends Controller
 {
     //
-    public function index($id_customer){
     
-        $pemesanan = Pemesanan::all();
+    public function index($id_customer){
         $pesan = DB::table('keranjang')
-        ->join('customer', 'keranjang.id_customer','=','customer.id_customer')
+        ->join('users', 'keranjang.id_customer','=','users.user_id')
         ->join('produk', 'produk.id_produk','=','keranjang.id_produk')
-        ->where('customer.id_customer','=',session('id'))
+        ->where('keranjang.id_customer','=',auth()->id())
         ->get();
-        $pembayaran = DB::table('pemesanan')
-        ->select('customer.*','customer.nama as namacustomer','pemesanan.*' )
-        ->join('customer', 'pemesanan.id_customer','=','customer.id_customer')
-        ->where('customer.id_customer','=',session('id'))
-        ->first();
+
+       
+        $total = DB::table('keranjang')
+        ->select(DB::raw('SUM(total) as total')) 
+        ->groupBy('id_customer')
+        ->where('id_customer','=',auth()->id())
+        ->get();
+
         
+        $pembayaran = DB::table('pemesanan')
+        ->select('users.*','users.name as namacustomer','pemesanan.*' )
+        ->join('users', 'pemesanan.id_customer','=','users.user_id')
+        ->where('users.user_id','=',auth()->id())
+        ->first();
         if(count($pesan) == 0){
             return redirect('/menu');
         } else {
             
-            return view('layout.checkout',compact('pemesanan','pesan','pembayaran'));
+            return view('layout.checkout',compact('pesan','pembayaran','total'));
         }
-
-
-      
-
 
 
         // $joinpemesanan = DB::table('pemesanan')
@@ -46,21 +50,14 @@ class CheckoutController extends Controller
     }
 
     public function storepemesanan(Request $request){
-        //                
 
-        $keranjang = Keranjang::where('id_customer',session('id'))->get();
+        $keranjang = Keranjang::where('id_customer',auth()->id())->get();
         
-        // var_dump($simpankeranjang);
-        // die();
 
-        $temp = 0;
-        foreach($keranjang as $keranjangs){
-            $temp = $temp + $keranjangs->total;
-        }
         $pemesanan= new Pemesanan();
-        $pemesanan->id_customer =  session('id');
+        $pemesanan->id_customer =  auth()->id();
         $pemesanan->tanggal_pemesanan = now();
-        $pemesanan->total_harga = $temp;
+        $pemesanan->total_harga = $request->total_harga;
         $name = $request->file('bukti_pembayaran')->getClientOriginalName();
         $request->file('bukti_pembayaran')->move('bukti_pembayaran',$name);
         $pemesanan->bukti_pembayaran = $name;
@@ -76,7 +73,7 @@ class CheckoutController extends Controller
 
             }  
             
-            $deletekeranjang = Keranjang::where('id_customer',session('id'));
+            $deletekeranjang = Keranjang::where('id_customer',auth()->id());
             if( $deletekeranjang->delete()){
             }
     }
