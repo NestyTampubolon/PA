@@ -4,6 +4,18 @@
   <!-- ======= Home Section ======= -->
   <section id="home" class="d-flex align-items-center">
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+    @if(session('error'))
+          <div class="dropdown">
+              <a class="dropdown">
+              <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              Hallo {{ Auth::user()->name}} {{session('error')}}
+            </div>
+          </div>
+              </a>                   
+            </div>
+    @endif
       <div class="row">
         <div class="col-lg-8 ">
           <h1>Welcome to <span>Toba Tio Cafe & Resto</span></h1>

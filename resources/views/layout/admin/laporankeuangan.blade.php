@@ -12,8 +12,8 @@
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
-												<th>No Laporan Keuangan</th>
-												<th>Tanggal Laporan</th>
+												<th>No</th>
+												<th>Tanggal</th>
 												<th>Pemasukan</th>
 												<th>Pengeluaran</th>
 												<th>Keuntungan</th>

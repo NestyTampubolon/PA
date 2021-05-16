@@ -76,7 +76,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth','Verifikasi']], function () {
     Route::get('menu/pesan/{id_produk}',[PesanController::class,'index'])->name('menu.pesan');
     Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('pesan.pesanan');
     Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');

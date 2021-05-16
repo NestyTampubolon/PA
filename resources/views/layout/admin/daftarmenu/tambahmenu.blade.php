@@ -33,6 +33,7 @@
                     <label class="col-sm-3 col-form-label">Kategori</label>
                     <div class="col-sm-9">
                         <select class="form-control"  required="required" name="kategori" aria-label="Default select example" >
+                            <option></option>
                             <option value="aneka_nasi">Aneka Nasi</option>
                             <option value="aneka_ikan">Aneka Ikan</option>
                             <option value="aneka_seafood">Aneka Seafood</option>
