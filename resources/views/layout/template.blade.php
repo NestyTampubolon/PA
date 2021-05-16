@@ -104,11 +104,7 @@
               <h5 class="card-title"><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block; margin: 5px auto;" alt=""></h5>
               <h5 class="card-subtitle mb-4 ">{{$produk->nama}}</h5>
               <p class="card-text">@currency($produk->harga)</p>
-              @if(session('username'))
               <a href="menu/pesan/{{$produk->id_produk}}" class="btn btn-success">Beli</a>
-              @else 
-              <a href="login" class="btn btn-success">Beli</a>
-              @endif
             </div>
           </div>
           @endforeach
@@ -242,11 +238,11 @@
                 </p>
               </div>
 
-              <div class="email">
+              <!-- <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>info@example.com</p>
-              </div>
+              </div> -->
 
               <div class="phone">
                 <i class="bi bi-phone"></i>

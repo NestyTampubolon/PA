@@ -60,8 +60,11 @@
 
 
 <div class="card card-login justify-content-center ">
+<div class="card-header text-center">
+<h3>Daftar Pesanan</h3>
+</div>
         <div class="card-body">
-
+    
             @foreach($pesan as $pesan)
                 <div class="mb-3 row ">
                     <div class="col-sm-9">

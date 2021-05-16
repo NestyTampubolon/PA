@@ -29,7 +29,7 @@
               <li data-filter=".filter-steak">Steak</li>
               <li data-filter=".filter-sayur">Sayur</li>
               <li data-filter=".filter-snack">Snack</li>
-              <li data-filter=".filter-dessert-salad">Desert/Salad</li>
+              <li data-filter=".filter-dessert-salad">Dessert/Salad</li>
 
             </ul>
           </div>

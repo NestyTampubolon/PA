@@ -41,11 +41,11 @@ margin:30px;
                 </p>
               </div>
 
-              <div class="email">
+              <!-- <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>info@example.com</p>
-              </div>
+              </div> -->
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
