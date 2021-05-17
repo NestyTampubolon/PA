@@ -70,8 +70,19 @@
                         <div class="card-footer text-center">
                  <div class="small"><a href="{{ route('register') }}">Need an account? Sign up!</a></div>
                  </div>
-                    </form>
-
+                </form>
+                @if(session('login'))
+          <div class="dropdown">
+              <a class="dropdown">
+              <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+             {{session('login')}}
+            </div>
+          </div>
+              </a>                   
+            </div>
+             @endif
+           
             
             </div>
         </div>

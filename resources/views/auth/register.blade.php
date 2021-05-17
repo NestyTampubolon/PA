@@ -45,6 +45,11 @@
                         <label for="password-confirm" class="col-sm-3 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
                         <div class="col-sm-9">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row justify-content-center">
@@ -52,7 +57,11 @@
                         <div class="col-sm-9">
                             <input class="col-sm-6" type="number" width="60px" required="required" name="usia" id="usia" class="form-control" value="{{ old('usia') }}" required autocomplete="usia" autofocus>
                             <label class="col-sm-3 col-form-label">tahun</label>
-
+                            @error('usia')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div> 
                     <div class="mb-3 row">
@@ -67,12 +76,22 @@
                                     id="flexRadioDefault2" value="Perempuan"> Perempuan
                             </div>
                         </div>
+                        @error('jenis_kelamin')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label text-md-right">Nomor Handphone</label>
                         <div class="col-sm-9">
                             <input type="text" required="required" name="nomor_handphone" class="form-control" value="{{ old('nomor_handphone') }}" required autocomplete="nomr_handphone" autofocus>
                         </div>
+                        @error('nomor_handphone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label text-md-right">Alamat</label>
@@ -82,6 +101,11 @@
                             <label for="floatingTextarea2">Alamat</label>
                          </div>
                         </div>
+                        @error('alamat')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                     </div>
             </div>
         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">

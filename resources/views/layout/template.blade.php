@@ -8,9 +8,19 @@
           <div class="dropdown">
               <a class="dropdown">
               <div class="alert alert-warning d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
             <div>
-              Hallo {{ Auth::user()->name}} {{session('error')}}
+              Hallo {{ Auth::user()->name}} ,{{session('error')}}
+            </div>
+          </div>
+              </a>                   
+            </div>
+    @endif
+    @if(session('checkout'))
+          <div class="dropdown">
+              <a class="dropdown">
+              <div class="alert alert-primary d-flex align-items-center" role="alert">
+            <div>
+              Hallo {{ Auth::user()->name}}, {{session('checkout')}}
             </div>
           </div>
               </a>                   

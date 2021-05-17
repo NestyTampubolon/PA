@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4">
-                            <img src="{{asset('image')}}/gallery1.jpg" alt="" width="100px" height="100px">
+                            <img src="{{asset('gambarmenu')}}/{{$produks->gambar}}" alt="" width="150px" height="200px">
                         </div>
                         <div class="col-lg-8">
                             <div class="card-body">

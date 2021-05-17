@@ -34,7 +34,7 @@ class CheckoutController extends Controller
         ->where('users.user_id','=',auth()->id())
         ->first();
         if(count($pesan) == 0){
-            return redirect('/menu');
+            return redirect('/')->with('checkout', "Anda belum melakukan pemesanan");
         } else {
             
             return view('layout.checkout',compact('pesan','pembayaran','total'));
