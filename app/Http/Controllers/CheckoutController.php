@@ -28,13 +28,12 @@ class CheckoutController extends Controller
         ->get();
 
         
-        $pembayaran = DB::table('pemesanan')
-        ->select('users.*','users.name as namacustomer','pemesanan.*' )
-        ->join('users', 'pemesanan.id_customer','=','users.user_id')
+        $pembayaran = DB::table('keranjang')
+        ->join('users', 'keranjang.id_customer','=','users.user_id')
         ->where('users.user_id','=',auth()->id())
         ->first();
         if(count($pesan) == 0){
-            return redirect('/')->with('checkout', "Anda belum melakukan pemesanan");
+            return redirect('/')->with('error', "Anda belum melakukan pemesanan");
         } else {
             
             return view('layout.checkout',compact('pesan','pembayaran','total'));
@@ -77,7 +76,7 @@ class CheckoutController extends Controller
             if( $deletekeranjang->delete()){
             }
     }
-        return redirect()->back();
+        return redirect()->back()->with('error', "Pemesanan sedang di proses");;
 
     }
 

@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('jenis_kelamin');
             $table->integer('usia');
-            $table->string('nomor_handphone');
+            $table->string('nomor_handphone')->nullable();;
             $table->text('alamat');
             $table->boolean('role')->default(0);
             $table->string('keterangan')->default('Proses');

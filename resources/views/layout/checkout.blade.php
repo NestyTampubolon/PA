@@ -5,13 +5,13 @@
 
 <div class="row justify-content-center  menu-item filter-Customer">
             <div class="card card-login justify-content-center ">
-            <div class="card-header text-center "> <h1>Form Pembayaran</h1> </div>
+            <div class="card-header text-center "> <h1>Pembayaran</h1> </div>
    
         <div class="card-body">
                 <div class="mb-4 row justify-content-center">
                     <label class="col-sm-3 col-form-label">Nama</label>
                     <div class="col-sm-9">
-                        <label for="">{{$pembayaran->namacustomer}}</label>
+                        <label for="">{{$pembayaran->name}}</label>
                     </div>
                 </div>
                 <div class="mb-4 row">

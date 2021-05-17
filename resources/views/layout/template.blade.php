@@ -15,17 +15,6 @@
               </a>                   
             </div>
     @endif
-    @if(session('checkout'))
-          <div class="dropdown">
-              <a class="dropdown">
-              <div class="alert alert-primary d-flex align-items-center" role="alert">
-            <div>
-              Hallo {{ Auth::user()->name}}, {{session('checkout')}}
-            </div>
-          </div>
-              </a>                   
-            </div>
-    @endif
       <div class="row">
         <div class="col-lg-8 ">
           <h1>Welcome to <span>Toba Tio Cafe & Resto</span></h1>
