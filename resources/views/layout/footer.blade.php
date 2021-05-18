@@ -6,7 +6,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">Toba Tio</a></h1>
+            <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</a></h1>
               <p>
               Jl. Sibolahotang, Sibola Hotangsas,<br> 
               Kabupaten Toba Samosir, <br>

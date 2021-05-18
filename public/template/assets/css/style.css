@@ -15,6 +15,12 @@ body {
 }
 
 a {
+  color: #cda45e;
+  text-decoration: none;
+}
+
+
+.small a{
   color: blue;
   text-decoration: none;
 }
