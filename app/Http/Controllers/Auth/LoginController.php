@@ -49,7 +49,7 @@ class LoginController extends Controller
         ]);
 
         if(auth()->attempt(array('email' => $input['email'],'password'=> 
-        $input['password'],'keterangan' => 'Verifikasi')))
+        $input['password'])))
         {
             if(auth()->user()->role == 1){
                 return redirect('/daftarmenu');
