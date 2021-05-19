@@ -41,7 +41,7 @@
             <p>Toba Tio Cafe & Resto merupakan tempat yang berlokasi di Jl. Sibolahotang, Sibola Hotangsas, Kabupaten Toba Samosir, Sumatera</p>
             <p>Tempat ini berada di pinggiran danau, dan memiliki daya tarik kepada pengunjung karena memiliki tempat untuk memandang danau saat makan atau minum.</p> 
             <p>Menyediakan fasilitas Live Music, Wi-Fi, sewa tempat dan ruang VIP </p>
-            <p>Toba Tio Cafe & Resto juga menyediakan berbagai menu makanan dan minuman</p>
+            <p>Toba Tio Cafe & Resto juga menyediakan berbagai menu makanan dan minuman</p> 
             <p> </p>
           </div>
         </div>

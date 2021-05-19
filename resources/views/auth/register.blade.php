@@ -1,4 +1,5 @@
 @include('layout.nav')
+<section id="register">
 <div class="container">
     <div class="row justify-content-center">
         <div class="card card-login justify-content-center ">
@@ -118,5 +119,5 @@
 </div>
 </div>
 </div>
-
+</section>
 @include('layout.footer')

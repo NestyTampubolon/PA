@@ -1,5 +1,5 @@
 @include('layout.nav')
-
+<section id="login">
 <div class="container">
 
     <!-- ======= Menu Section ======= -->
@@ -16,13 +16,13 @@
             <div class="card card-login justify-content-center ">
             <div class="card-header text-center "> <h1>Login</h1> </div>
     
-        <div class="card-body">
+        <div class="card-body ">
         <form method="POST" action="{{ route('login') }}">
                         @csrf
                 <div class="mb-3 row justify-content-center">
-                    <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                    <div class="col-sm-8">
-                        <input  id="email" type="email" required="required" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
+                        <input type="email"  id="email" required="required" class="form-control @error('email') is-invalid @enderror" name="email"  value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
                         @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,9 +31,9 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="password" class="col-sm-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                    <div class="col-sm-8">
-                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-key"></i></span>
+                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                         @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -41,9 +41,8 @@
                                 @enderror
                     </div>
                 </div>
-
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -55,7 +54,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-5">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
@@ -89,5 +88,5 @@
     
         </div>
       </div>
-
+</section>
 @include('layout.footer')
