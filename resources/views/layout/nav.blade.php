@@ -50,7 +50,7 @@
           <li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           @guest
-          <li><a class="nav-link scrollto" href="/login"><i class="bi bi-cart4"></i>&nbsp Checkout</a></li>  
+          <li><a class="nav-link scrollto" href="/login"><i class="bi bi-cart4"></i>&nbsp Checkout</a> </li>  
            @else
           <li><a class="nav-link scrollto" href="/checkout/{{ Auth::user()->user_id}}"><i class="bi bi-cart4"></i>&nbsp Checkout</a></li> 
           @endguest
@@ -67,7 +67,7 @@
                         @else
                         <nav id="navbar" class="navbar order-last order-lg-0">
                            <li class="dropdown" style="list-style-type: none;"><a href="#"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }}  
                                 </a>
                              <ul>
                               <li>    
@@ -75,7 +75,7 @@
                                     <a class="dropdown" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                         {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

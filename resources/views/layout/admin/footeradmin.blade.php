@@ -5,7 +5,7 @@
 					<div class="row">
 
 						<div class="col">
-							&copy; Team 8
+						&copy; Copyright <strong><span>Team 8 PA 1 Institut Teknologi Del 2021</span></strong>
 						</div>
 
 					</div>

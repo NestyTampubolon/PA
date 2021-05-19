@@ -52,7 +52,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Team 8</span></strong>.
+        &copy; Copyright <strong><span>Team 8 PA 1 Institut Teknologi Del 2021</span></strong>
       </div>
     </div>
   </footer><!-- End Footer -->

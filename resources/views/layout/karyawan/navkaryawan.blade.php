@@ -57,7 +57,7 @@
 				<a class="scroll-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-													 <i class="fas fa-user"></i>{{ __('Logout') }}</a>
+													 <i class="fas fa-sign-out-alt"></i>{{ __('Logout') }}</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -94,14 +94,6 @@
 								<p>
                                 Jl. Sibolahotang, Sibola Hotangsas, Kabupaten Toba Samosir, Sumatera
 								</p>
-							</div>
-							<div class="buttons wow fadeInUp">
-								<a class="btn btn-primary btn-customized scroll-link" href="#section-1" role="button">
-									<i class="fas fa-book-open"></i> Learn More
-								</a>
-								<a class="btn btn-primary btn-customized-2 scroll-link" href="#section-3" role="button">
-									<i class="fas fa-pencil-alt"></i> Our Projects
-								</a>
 							</div>
 						</div>
 					</div>

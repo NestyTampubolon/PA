@@ -81,7 +81,9 @@
                         <input type="hidden" required="required" name="total" class="form-control" value="{{$pesan->total}}">
                     </div>
                 </div>
+                <hr>
                 @endforeach
+                
                 </div>
                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                 <button type="button" class="btn btn-danger" onclick="window.location.href='/'" class="justify-content-between"><i class="fas fa-times"></i> Batal</button>

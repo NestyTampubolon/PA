@@ -24,12 +24,12 @@
               <li data-filter=".filter-fasta">Fasta</li>
               <br>
               <li data-filter=".filter-aneka_juice">Aneka Juice</li>
-              <li data-filter=".filter-kopi-susu">Kopi/Susu</li>
+              <li data-filter=".filter-kopi_susu">Kopi/Susu</li>
               <li data-filter=".filter-bir">Bir</li>
               <li data-filter=".filter-steak">Steak</li>
               <li data-filter=".filter-sayur">Sayur</li>
               <li data-filter=".filter-snack">Snack</li>
-              <li data-filter=".filter-dessert-salad">Dessert/Salad</li>
+              <li data-filter=".filter-dessert_salad">Dessert/Salad</li>
 
             </ul>
           </div>
@@ -42,7 +42,9 @@
         @foreach($produks as $produk)
         <div class="card card-menu menu-item filter-{{$produk->kategori}}" style="width: 18rem;">
               <div class="card-body">
-              <h5 class="card-title"><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block; margin: 5px auto;" alt=""></h5>
+              <h5 class="card-title">
+                <!-- <img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block;" alt=""> -->
+              </h5>
               <h5 class="card-subtitle mb-4 ">{{$produk->nama}}</h5>
               <p class="card-text">@currency($produk->harga)</p>
               <a href="menu/pesan/{{$produk->id_produk}}" class="btn btn-success">Beli</a>

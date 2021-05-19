@@ -879,7 +879,7 @@ section {
   font-weight: 500;
   line-height: 1;
   color: #fff;
-  margin-bottom: 10px;
+  
   transition: all ease-in-out 0.3s;
   border-radius: 50px;
   font-family: "Playfair Display", serif;
@@ -929,7 +929,6 @@ section {
   padding-right: 10px;
   background: #1a1814;
   position: relative;
-  z-index: 3;
   font-weight: 700;
   color: white;
   transition: 0.3s;
@@ -943,7 +942,6 @@ section {
   background: #1a1814;
   position: relative;
   z-index: 3;
-  padding: 0 10px;
   font-weight: 600;
   color: #cda45e;
 }
@@ -1379,6 +1377,14 @@ section {
   opacity: 0.9;
 }
 
+.card-pesan{
+  background-color:	 #bfbfbf;
+  width: 50%;
+  color:black;
+  padding: 20px;
+  margin: 100px;
+  opacity: 0.9;
+}
 
 /*--------------------------------------------------------------
 # Footer

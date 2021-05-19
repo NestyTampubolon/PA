@@ -12,11 +12,11 @@
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
-												<th>Nomor Pemesanan</th>
-												<th>Tanggal Pemesanan</th>
+												<th>Nomor</th>
+												<th>Tanggal</th>
 												<th>Total Harga</th>
 												<th>Keterangan</th>
-												<th>Customer</th>
+												<th>Nama</th>
 												<th>Bukti Pembayaran</th>
 												<th>Action</th>
 											</tr>
