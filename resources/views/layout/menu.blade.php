@@ -40,10 +40,8 @@
         
         @foreach($produks as $produk)
         <div class="card card-menu menu-item filter-{{$produk->kategori}}" style="width: 16rem;">
-              <div class="card-body">
-              <h5 class="card-title">
-                <img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block;" alt="">
-              </h5>
+            <div class="card-body">
+              <img class="menuimage" src="{{url('gambarmenu/'.$produk->gambar)}}" width="200px" height="180px" style="display: block;" alt="">
               <h5 class="card-subtitle mb-4 ">{{$produk->nama}}</h5>
               <p class="card-text">@currency($produk->harga)</p>
               <a href="menu/pesan/{{$produk->id_produk}}" class="btn btn-success">Beli</a>
