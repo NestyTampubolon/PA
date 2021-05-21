@@ -715,6 +715,10 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+#about .container {
+  padding-top: 50px;
+}
+
 .about {
   background: url("../../../image/about-bg.jpg") center center;
   background-size: cover;
@@ -858,10 +862,13 @@ section {
 /*--------------------------------------------------------------
 # Menu Section
 --------------------------------------------------------------*/
+#menu .container {
+  padding-top: 70px;
+}
 
 .card-menu{
   color:black;
-  margin:50px;
+  margin:20px;
 }
 .menu #menu-flters {
   padding: 0;
@@ -1195,6 +1202,10 @@ section {
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
+#gallery .container {
+  padding-top: 70px;
+}
+
 .gallery .gallery-item {
   overflow: hidden;
 
@@ -1213,6 +1224,9 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+#contact .container {
+  padding-top: 70px;
+} 
 .contact .info {
   width: 100%;
 }

@@ -104,7 +104,7 @@
         <!-- card1 -->
         
         @foreach($produks as $produk)
-        <div class="card card-menu menu-item filter-{{$produk->kategori}}" style="width: 18rem;">
+        <div class="card card-menu menu-item filter-{{$produk->kategori}}" style="width: 16rem;">
               <div class="card-body">
               <h5 class="card-title"><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="95%" height="90%" style="display: block; margin: 5px auto;" alt=""></h5>
               <h5 class="card-subtitle mb-4 ">{{$produk->nama}}</h5>
