@@ -39,8 +39,8 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
     <div class="col-md-2">
-     <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</a></h1>
-     <h4 style="color:#cda45e;">Cafe & Resto</h4>
+    <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</h1>
+     <h4 style="color:#cda45e;">Cafe & Resto</h4></a>
      </div>
      
       <!-- Uncomment below if you prefer to use an image logo -->

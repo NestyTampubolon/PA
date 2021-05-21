@@ -76,7 +76,7 @@ class CheckoutController extends Controller
             if( $deletekeranjang->delete()){
             }
     }
-        return redirect()->back()->with('error', "Pemesanan sedang di proses");;
+        return redirect()->back()->with('error', "Pemesanan sedang di proses");
 
     }
 

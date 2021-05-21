@@ -42,9 +42,9 @@ Route::get('contact', function () {
 
 
 Route::group(['middleware' => ['auth','role']], function () {
-Route::get('daftarpemesanan', [DaftarpemesananController::class, 'index']);
-Route::post('daftarpemesanan/{id_pemesanan}', [DaftarpemesananController::class, 'update'])->name('daftarpemesanan.update');
-Route::get('pemesanandetail/{id_pemesanan}', [DaftarpemesananController::class, 'detail']);
+    Route::get('daftarpemesanan', [DaftarpemesananController::class, 'index']);
+    Route::post('daftarpemesanan/{id_pemesanan}', [DaftarpemesananController::class, 'update'])->name('daftarpemesanan.update');
+    Route::get('pemesanandetail/{id_pemesanan}', [DaftarpemesananController::class, 'detail']);
 
 });
 
@@ -77,6 +77,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth','Verifikasi']], function () {
+    Route::post('notifikasi/{id_customer}', [HomeController::class, 'notifikasi']);
     Route::get('menu/pesan/{id_produk}',[PesanController::class,'index'])->name('menu.pesan');
     Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('pesan.pesanan');
     Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');
