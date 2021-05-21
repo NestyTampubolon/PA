@@ -46,7 +46,6 @@
                             <option value="aneka_juice">Aneka Juice</option>
                             <option value="kopi-susu">Kopi/Susu</option>
                             <option value="bir">Bir</option>
-                            <option value="steak">Steak</option>
                             <option value="sayur">Sayur</option>
                             <option value="snack">Snack</option>
                             <option value="dessert-salad">Dessert/Salad</option>

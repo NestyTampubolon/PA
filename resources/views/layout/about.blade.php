@@ -1,7 +1,7 @@
     @include('layout.nav')
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+      <div class="container container-about" data-aos="fade-up">
       <div class="section-title">
           <h2>About</h2>
           <p>Why Choose Us</p>

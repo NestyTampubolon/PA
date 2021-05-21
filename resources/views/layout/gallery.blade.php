@@ -3,7 +3,7 @@
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
 
-      <div class="container" data-aos="fade-up">
+      <div class="container container-gallery" data-aos="fade-up">
         <div class="section-title">
           <h2>Gallery</h2>
           <p>Some photos from Our Restaurant</p>

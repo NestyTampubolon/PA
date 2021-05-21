@@ -5,7 +5,7 @@ margin:30px;
 }</style>
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+      <div class="container container-contact" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Contact</h2>

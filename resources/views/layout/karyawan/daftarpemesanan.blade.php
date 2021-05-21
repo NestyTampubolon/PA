@@ -44,8 +44,6 @@
 											</td>
 											<td>{{$joinpemesanans->name}}</td>
 											<td><img src="{{url('bukti_pembayaran/'.$joinpemesanans->bukti_pembayaran)}}" width="80px" height="80px" alt="" data-bs-toggle="modal" data-bs-target="#myModal{{$joinpemesanans->id_pemesanan}}">
-
-
 											<td width="200px"><button type="button"  class="btn btn-warning" onclick="window.location.href='pemesanandetail/{{$joinpemesanans->id_pemesanan}}'"><i class="fas fa-info-circle"  ></i>
                                         Detail</button>
 										<button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Simpan</button>

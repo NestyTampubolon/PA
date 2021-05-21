@@ -40,7 +40,7 @@
 
     <div class="col-md-2">
      <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</a></h1>
-     <h4 style="color:#cda45e;">Caffe & Resto</h4>
+     <h4 style="color:#cda45e;">Cafe & Resto</h4>
      </div>
      
       <!-- Uncomment below if you prefer to use an image logo -->

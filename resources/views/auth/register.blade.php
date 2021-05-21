@@ -86,7 +86,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label text-md-right">Nomor Handphone</label>
                         <div class="col-sm-9">
-                            <input type="text" required="required" name="nomor_handphone" class="form-control" value="{{ old('nomor_handphone') }}" required autocomplete="nomr_handphone" autofocus>
+                            <input type="number" required="required" name="nomor_handphone" class="form-control" value="{{ old('nomor_handphone') }}" required autocomplete="nomr_handphone" autofocus>
                         </div>
                         @error('nomor_handphone')
                                 <span class="invalid-feedback" role="alert">

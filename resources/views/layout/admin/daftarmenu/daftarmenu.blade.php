@@ -28,8 +28,17 @@
                                 <td><?php echo $nomor++; ?></td>
                                 <td>{{$produk->nama}}</td>
                                 <td>@currency($produk->harga)</td>
-                                <td><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="80px" height="80px" alt="">
+                                <td><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="80px" height="80px" alt="" data-bs-toggle="modal" data-bs-target="#myModals{{$produk->id_produk}}">
                                 <!-- {{$produk->gambar}} -->
+                                <div id="myModals{{$produk->id_produk}}" class="modal fade" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <img src="{{url('gambarmenu/'.$produk->gambar)}}"  class="img-fluid" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </td>
                                 <td>{{$produk->kategori}}</td>
                                 <td><button type="button"  class="btn btn-primary"  onclick="window.location.href='edit/{{$produk->id_produk}}'"><i class="fas fa-edit"></i>
@@ -70,6 +79,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 @include('layout.admin.footeradmin')
