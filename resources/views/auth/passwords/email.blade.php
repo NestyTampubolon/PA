@@ -32,9 +32,12 @@
                         </div>
 
                         <div class="form-group row mb-0 ">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-8 offset-md-3">
+                                <button type="submit"  class="btn btn-primary">
                                     {{ __('Kirim') }}
+                                </button>
+                                <button type="button"  class="btn btn-danger">
+                                   <a href="{{ route('login') }}" style="color:white"> {{ __('Kembali') }} </a>
                                 </button>
                             </div>
                         </div>

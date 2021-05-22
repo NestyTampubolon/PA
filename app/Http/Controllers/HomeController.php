@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $produks = Produk::inRandomOrder()->limit(6)->get();
+        $produks = Produk::inRandomOrder()->limit(8)->get();
         $informasi = Informasi::inRandomOrder()->limit(6)->get();
         return view('layout.template',compact('produks','informasi'));
     }

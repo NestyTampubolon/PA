@@ -18,13 +18,14 @@
 												<th>Pengeluaran</th>
 												<th>Keuntungan</th>
 												<th>Action</th>
+												<?php $nomor = 1;?>
 											</tr>
 										</thead>
 										<tbody>
 										
 										@foreach($totaljoin as $totaljoin)
 											<tr>
-												<td>{{$totaljoin->id_laporan}}</td>
+												<td><?php echo $nomor++; ?></td>
 												<td>{{$totaljoin->tanggal_laporan}}</td>
 												<td>@currency($totaljoin->hargatotal)</td>
 												<td><form action="{{route('laporankeuangan.update',$totaljoin->id_laporan)}}" method="post" enctype="multipart/form-data">

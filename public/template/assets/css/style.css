@@ -1021,7 +1021,8 @@ section {
 --------------------------------------------------------------*/
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  min-height: 320px;
+  font-family: 'Arima Madurai', cursive;
+  /* min-height: 320px; */
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -1588,4 +1589,18 @@ section {
 .menuimage{
   margin-bottom: 12px;
 
+}
+
+#login h1, #register h1 , #form-email h1, #reset h1 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 50px;
+}
+
+.card-subtitle{
+  font-family: 'Paprika', cursive;
+  font-size :13px;
+}
+
+.card-harga{
+  font-family: 'Roboto', sans-serif;
 }

@@ -22,12 +22,13 @@
                                 <th>Alamat</th>
                                 <th>Keterangan</th>
                                 <th width="15%">Action</th>
+                                <?php $nomor = 1;?>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($customer as $customer)
                             <tr>
-                                <td>{{$customer->user_id}}</td>
+                                <td><?php echo $nomor++; ?></td>
                                 <td>{{$customer->name}}</td>
                                 <td>{{$customer->email}}</td>
                                 <td>{{$customer->jenis_kelamin}}</td>

@@ -17,12 +17,13 @@
                                 <th>Keterangan About</th>
                                 <th>Gambar</th>
                                 <th>Action</th>
+                                <?php $nomor = 1;?>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($informasi as $informasi)
                             <tr>
-                                <td>{{$informasi->id_informasi}}</td>
+                                <td><?php echo $nomor++; ?></td>
                                 <td>{{$informasi->deskripsi}}</td>
                                 <td><img src="{{url('image/'.$informasi->gambar)}}" width="100px" height="100px" alt=""></td>
                                 <td>

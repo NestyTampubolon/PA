@@ -15,8 +15,9 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Damion&family=Laila&family=Open+Sans&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Damion&family=Laila&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200&family=Julius+Sans+One&family=Paprika&family=Roboto&family=Texturina:wght@100&family=Ubuntu+Mono&display=swap" rel="stylesheet">  
   <!-- Vendor CSS Files -->
   <link href="{{asset('template')}}/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="{{asset('template')}}/assets/vendor/aos/aos.css" rel="stylesheet">
