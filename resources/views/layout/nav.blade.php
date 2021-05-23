@@ -42,7 +42,7 @@
 
     <div class="col-md-2">
     <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</h1>
-     <h4 style="color:#cda45e;">Cafe & Resto and</h4></a>
+     <h4 style="color:#cda45e;">Cafe & Resto</h4></a>
      </div>
      
 
