@@ -40,9 +40,9 @@
  <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-    <div class="col-md-2">
-    <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</h1>
-     <h4 style="color:#cda45e;">Cafe & Resto </h4></a>
+    <div class="col-md-2 me-auto">
+    <h1 class="logo me-auto me-lg-0"><a href="/">Toba Tio</a></h1>
+     <h4 style="color:#cda45e;">Cafe & Resto </h4>
      </div>
      
 
@@ -95,16 +95,7 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset('template')}}/assets/vendor/aos/aos.js"></script>
-  <script src="{{asset('template')}}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="{{asset('template')}}/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="{{asset('template')}}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="{{asset('template')}}/assets/vendor/php-email-form/validate.js"></script>
-  <script src="{{asset('template')}}/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{asset('template')}}/assets/js/main.js"></script>
 </body>
 
 </html>
