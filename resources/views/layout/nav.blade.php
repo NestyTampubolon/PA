@@ -61,13 +61,13 @@
           @endguest
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      
+      </nav>
      <!-- .navbar -->
      
       @guest
                     @if (Route::has('login'))
-                                    <a class="nav-link book-a-table-btn scrollto d-none d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
-                            @endif
+                              <a class="nav-link book-a-table-btn scrollto d-none d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
+                       @endif
                         @else
                         <nav id="navbar" class="navbar order-last order-lg-0">
                            <li class="dropdown" style="list-style-type: none;"><a href="#"  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
