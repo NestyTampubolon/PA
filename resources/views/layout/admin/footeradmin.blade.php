@@ -25,14 +25,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
-	<script type="text/javascript">
-            $(document).ready(function(){
-
-                // Format mata uang.
-                $( '.uang' ).mask('000.000.000', {reverse: true});
-
-            })
-        </script>
 	<script src="{{asset('assets')}}/js/jquery-1.10.2.min.js"></script>
 	<script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>
 	<script src="{{asset('assets')}}/js/jquery-migrate-3.0.0.min.js"></script>

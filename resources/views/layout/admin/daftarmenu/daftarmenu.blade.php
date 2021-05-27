@@ -51,7 +51,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="Modal{{$produk->id_produk}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
