@@ -62,9 +62,8 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       
-      </nav><!-- .navbar -->
+     <!-- .navbar -->
      
-      <!-- <a href="/login" class="book-a-table-btn scrollto d-none d-lg-flex">LOGIN</a> -->
       @guest
                     @if (Route::has('login'))
                                     <a class="nav-link book-a-table-btn scrollto d-none d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
@@ -90,7 +89,7 @@
                               </li>     
                            </ul>
                       </nav>
-                        @endguest
+      @endguest
  
     </div>
   </header><!-- End Header -->

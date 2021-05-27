@@ -73,10 +73,10 @@
                  </div>
                 </form>
                 @if(session('login'))
-          <div class="dropdown">
-              <a class="dropdown">
-              <div class="alert alert-danger d-flex align-items-center" role="alert">
-            <div>
+                <div class="dropdown">
+                    <a class="dropdown">
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <div>
              {{session('login')}}
             </div>
           </div>
