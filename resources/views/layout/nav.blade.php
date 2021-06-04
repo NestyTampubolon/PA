@@ -66,7 +66,7 @@
      
       @guest
                     @if (Route::has('login'))
-                              <a class="nav-link book-a-table-btn scrollto d-none d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
+                              <a class="nav-link book-a-table-btn scrollto d-lg-flex"  href="{{ route('login') }}">{{ __('Login') }}</a> 
                        @endif
                         @else
                         <nav id="navbar" class="navbar order-last order-lg-0">
