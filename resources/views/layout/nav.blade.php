@@ -55,7 +55,7 @@
           <li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           @guest
-          <li><a class="nav-link scrollto" href="/login"><i class="bi bi-cart4"></i>&nbsp Checkout</a> </li>  
+          <li><a class="nav-link scrollto" href="/login" data-bs-toggle="modal" data-bs-target="#Modal"><i class="bi bi-cart4"></i>&nbsp Checkout</a> </li>  
            @else
           <li><a class="nav-link scrollto" href="/checkout/{{ Auth::user()->user_id}}"><i class="bi bi-cart4"></i>&nbsp Checkout</a></li> 
           @endguest

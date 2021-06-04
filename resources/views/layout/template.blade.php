@@ -9,8 +9,9 @@
               <a class="dropdown">
               <div class="alert alert-warning d-flex align-items-center" role="alert">
             <div>
-              Hallo {{ Auth::user()->name}} ,{{session('error')}}
+              Hallo <strong>{{ Auth::user()->name}} </strong>,{{session('error')}}
             </div>
+            
           </div>
               </a>                   
             </div>

@@ -590,6 +590,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     line-height: 24px;
   }
+
+  #home card-login{
+    width:auto;
+  }
 }
 
 @-webkit-keyframes pulsate-btn {
@@ -1385,10 +1389,10 @@ section {
 --------------------------------------------------------------*/
 .card-login{
   background-color:	 #bfbfbf;
-  width: 50%;
   color:black;
   padding: 20px;
-  margin: 100px;
+  margin: 28% auto;
+  width: auto;
   opacity: 0.9;
 }
 
@@ -1603,4 +1607,9 @@ section {
 
 .card-harga{
   font-family: 'Roboto', sans-serif;
+}
+
+.alert{
+
+ 
 }
