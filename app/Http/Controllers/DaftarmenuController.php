@@ -12,7 +12,6 @@ class DaftarmenuController extends Controller
 
     public function index(){
         $produks = Produk::all();
-        $number = 1;
         return view('layout.admin.daftarmenu.daftarmenu',compact('produks'));
     }
 

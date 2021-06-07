@@ -30,6 +30,7 @@ class LaporankeuanganController extends Controller
         $update->pengeluaran = $request->pengeluaran;
         $update->keuntungan = $request->keuntungan;
         $update->pemasukan = $request->pemasukan;
+        $update->id_karyawan = auth()->id();
         $update -> save();
         return redirect('laporankeuangan');         
 
