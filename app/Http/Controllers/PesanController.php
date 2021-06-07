@@ -38,7 +38,7 @@ class PesanController extends Controller
         $keranjang->id_customer = auth()->id();
         $keranjang->save();
 
-        return redirect('/menu');
+        return redirect()->back()->with('success', "Pesanan Anda berhasil disimpan di keranjang!");;
     }
    
 }
