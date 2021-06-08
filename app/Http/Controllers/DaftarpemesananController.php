@@ -36,21 +36,15 @@ class DaftarpemesananController extends Controller
         $update = Pemesanan::find($id_pemesanan);
         $update->keterangan = $request->keterangan;
         $update-> save();
-    
-  
-
-        // $cek = LaporanKeuangan::where('tanggal_laporan','=',now())->first();
 
         $cek = LaporanKeuangan::whereRaw('tanggal_laporan',now())->first();
             if(empty($cek)){
                 $laporan = new LaporanKeuangan();
-                 $laporan->tanggal_laporan = now();
+                $laporan->tanggal_laporan = now();
                 $laporan->save();       
             }else{
-               
+               return redeirect()->back();
             }
-        
-       
         
         return redirect('daftarpemesanan');  
 

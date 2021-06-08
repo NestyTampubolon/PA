@@ -15,8 +15,8 @@
                 <!-- <strong>Email:</strong> info@example.com<br> -->
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://web.facebook.com/toba.t.resto" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/caferestotobatio/" class="instagram"><i class="bx bxl-instagram"></i></a>
               </div>
             </div>
           </div>
@@ -37,9 +37,34 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Login</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">Daftar Akun</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/pembayaran">Media Pembayaran</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#" data-bs-toggle="modal" data-bs-target="#Modalpembayaran">Media Pembayaran</a></li>
             </ul>
           </div>
+
+          <style>
+          .modal{
+            color:black;
+          }
+          </style>
+              <!-- Modal -->
+              <div class="modal fade" id="Modalpembayaran" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-center" id="exampleModalLabel" >Media Pembayaran</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>OVO</p>
+                    <p>DANA</p>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <p>Memberikan kepuasan kepada pelanggan dengan menu terbaik, pelayanan yang diberikan, serta lingkungan</p>

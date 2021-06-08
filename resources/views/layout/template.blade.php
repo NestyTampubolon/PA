@@ -137,70 +137,16 @@
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-0">
-
+        @foreach($gambar as $gambars)
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery1.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery1.jpg" alt="" class="img-fluid">
+              <a href="{{asset('image')}}/{{$gambars->gambar}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('image')}}/{{$gambars->gambar}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery2.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery2.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery3.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery3.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery4.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery4.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery5.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery5.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery6.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery7.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery7.jpg"alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('image')}}/gallery8.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('image')}}/gallery8.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
+          @endforeach
+         
 
         </div>
 

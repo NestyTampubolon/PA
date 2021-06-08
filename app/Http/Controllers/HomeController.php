@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
         $produks = Produk::inRandomOrder()->limit(8)->get();
         $informasi = Informasi::inRandomOrder()->limit(6)->get();
-        return view('layout.template',compact('produks','informasi'));
+        $gambar = Informasi::inRandomOrder()->limit(8)->get();
+        return view('layout.template',compact('produks','informasi','gambar'));
     }
 }

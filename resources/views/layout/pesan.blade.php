@@ -37,9 +37,7 @@
                                     <div class="mb-3 row">
                                         <label for="quantity">Kuantitas</label>
                                         <input type="number" name="quantity" required="required" class="form-control" value="">
-
-                                        
-                                       
+  
                                     </div>
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
