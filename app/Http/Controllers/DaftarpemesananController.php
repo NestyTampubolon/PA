@@ -43,7 +43,7 @@ class DaftarpemesananController extends Controller
                 $laporan->tanggal_laporan = now();
                 $laporan->save();       
             }else{
-               return redeirect()->back();
+               
             }
         
         return redirect('daftarpemesanan');  
