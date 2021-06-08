@@ -14,7 +14,9 @@ class LaporankeuanganController extends Controller
     //
     public function index()
     {
-        $laporan = DB::table('laporan_keuangan')
+        $laporan = DB::table('pemesanan')
+                 ->groupBy('pemesanan.tanggal_pemesanan') 
+                 ->select(DB::raw('sum(total_harga) as hargatotal'),'pemesanan.*') 
                 ->get();
         $totaljoin = DB::table('pemesanan')
                 ->join('laporan_keuangan', 'pemesanan.tanggal_pemesanan','=','laporan_keuangan.tanggal_laporan')
@@ -22,6 +24,7 @@ class LaporankeuanganController extends Controller
                 ->groupBy('pemesanan.tanggal_pemesanan') 
                 ->where('pemesanan.keterangan','=','Selesai')            
                 ->get();
+       
         return view('layout.admin.laporankeuangan',compact('laporan','totaljoin'));
     }
 
