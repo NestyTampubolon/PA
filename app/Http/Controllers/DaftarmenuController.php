@@ -30,6 +30,7 @@ class DaftarmenuController extends Controller
         $produks->nama = $request->input('nama');
         $produks->harga = $request->input('harga');
         $produks->kategori = $request->input('kategori');
+        $produks->stok = $request->input('stok');
         
        
         $name = $request->file('gambar')->getClientOriginalName();
@@ -45,13 +46,18 @@ class DaftarmenuController extends Controller
     public function update(Request $request, $id_produk){
         $update = Produk::find($id_produk);
         $file = $update->gambar;
-        $file= $request->file('gambar')->getClientOriginalName();
-        $request->file('gambar')->move('gambarmenu',$file);
-        
+        $file = $update->gambar;
+        if ($request->hasFile('gambar')){
+            $file= $request->file('gambar')->getClientOriginalName();
+            $request->file('gambar')->move('gambarmenu',$file);
+            $update->gambar = $file;
+        }
+
+
         $update->nama = $request->nama;
         $update->harga = $request->harga;
-        $update->gambar = $file;
         $update->kategori = $request->kategori;
+        $update->stok = $request->stok;
         $update -> save();
 
         return redirect('daftarmenu');         

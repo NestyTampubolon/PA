@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemesanan;
+use App\Models\Produk;
 use App\Models\Keranjang;
 use App\Models\PemesananDetail;
 use App\Models\LaporanKeuangan;
@@ -39,13 +40,6 @@ class CheckoutController extends Controller
             return view('layout.checkout',compact('pesan','pembayaran','total'));
         }
 
-
-        // $joinpemesanan = DB::table('pemesanan')
-        // ->join('pemesanan_detail', 'pemesanan.id_pemesanan','=','pemesanan_detail.id_pemesanan')
-        // ->select(DB::raw('sum(pemesanan_detail.jumlah_harga) as hargatotal'),'pemesanan.*') 
-        // ->groupBy('pemesanan.id_pemesanan')
-        // ->get();
-        // return view('layout.admin.daftarpemesanan',compact('pemesanan','joinpemesanan'));
     }
 
     public function storepemesanan(Request $request){
@@ -57,9 +51,14 @@ class CheckoutController extends Controller
         $pemesanan->id_customer =  auth()->id();
         $pemesanan->tanggal_pemesanan = now();
         $pemesanan->total_harga = $request->total_harga;
-        $name = $request->file('bukti_pembayaran')->getClientOriginalName();
-        $request->file('bukti_pembayaran')->move('bukti_pembayaran',$name);
-        $pemesanan->bukti_pembayaran = $name;
+        $pemesanan->nama_penerima = $request->nama_penerima;
+        $pemesanan->alamat_penerima = $request->alamat_penerima;
+        $pemesanan->metode_pembayaran = $request->metode_pembayaran;
+        if ($request->hasFile('bukti_pembayaran')){
+            $file= $request->file('bukti_pembayaran')->getClientOriginalName();
+            $request->file('bukti_pembayaran')->move('bukti_pembayaran',$file);
+            $pemesanan->gambar = $file;
+        }
         if( $pemesanan->save()){
             
             foreach($keranjang as $keranjangs){
@@ -78,6 +77,23 @@ class CheckoutController extends Controller
     }
         return redirect()->back()->with('error', "Pemesanan sedang di proses");
 
+    }
+
+    public function delete(Request $request, $id_keranjang){
+      
+        
+        
+        $delete = Keranjang::find($id_keranjang);
+        $produk = $delete->id_produk;
+        $quantity = $delete->quantity;
+        $deleteproduks = Produk::find($produk);
+        $deleteproduks->stok = $deleteproduks->stok + $quantity;
+        $deleteproduks->save();
+        if( $delete->delete()){
+           
+           return redirect()->back();
+        }
+  
     }
 
 }

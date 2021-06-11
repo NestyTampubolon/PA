@@ -29,8 +29,6 @@ class PesanController extends Controller
  
    
     public function simpanpesanan(Request $request){
-        // var_dump($request);
-        // die();
         $keranjang = new Keranjang();
         $keranjang->id_produk = $request->input('id_produk');
         $keranjang->quantity = $request->input('quantity');
@@ -38,6 +36,9 @@ class PesanController extends Controller
         $keranjang->id_customer = auth()->id();
         $keranjang->save();
 
+        $produks = Produk::find($request->id_produk);
+        $produks->stok = $produks->stok - $request->quantity;
+        $produks->save();
         return redirect()->back()->with('success', "Pesanan Anda berhasil disimpan di keranjang!");;
     }
    

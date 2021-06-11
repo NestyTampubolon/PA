@@ -1405,6 +1405,13 @@ section {
   opacity: 0.9;
 }
 
+.card-checkout{
+  background-color:	 #bfbfbf;
+  color:black;
+  padding: 20px;
+  margin: 100px auto;
+  opacity: 0.9;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1609,7 +1616,3 @@ section {
   font-family: 'Roboto', sans-serif;
 }
 
-.alert{
-
- 
-}

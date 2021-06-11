@@ -15,6 +15,7 @@ use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LaporankeuangandetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,11 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::get('laporankeuangan', [LaporankeuanganController::class,'index']);
         Route::post('laporankeuangan/store', [LaporankeuanganController::class, 'store'])->name('laporankeuangan.store');
         Route::post('laporankeuangan/{id_laporan}', [LaporankeuanganController::class, 'update'])->name('laporankeuangan.update');
+        Route::get('laporankeuangandetail/{id_laporan}', [LaporankeuangandetailController::class, 'index']);
+        Route::post('laporankeuangandetail/store', [LaporankeuangandetailController::class, 'store'])->name('laporankeuangandetail.store');;
+        Route::post('laporankeuangandetail/update/{id_laporandetail}', [LaporankeuangandetailController::class, 'update'])->name('laporankeuangandetail.update');
+        Route::post('laporankeuangandetail/updatetotal/{id_laporandetail}', [LaporankeuangandetailController::class, 'updatetotal'])->name('laporankeuangandetail.updatetotal');
+        Route::get('laporankeuangandetail/delete/{id_laporandetail}', [LaporankeuangandetailController::class, 'delete'])->name('laporankeuangandetail.delete');
 
         Route::get('daftarmenu', [DaftarmenuController::class, 'index']);
         Route::get('tambahmenu', [DaftarmenuController::class, 'tambah']);
@@ -82,6 +88,7 @@ Route::group(['middleware' => ['auth','Verifikasi']], function () {
     Route::post('pesan/pesanan', [PesanController::class, 'simpanpesanan'])->name('pesan.pesanan');
     Route::post('checkout/storepemesanan', [CheckoutController::class, 'storepemesanan'])->name('checkout.storepemesanan');
     Route::get('checkout/{id_customer}',[CheckoutController::class,'index']);
+    Route::get('checkout/delete/{id_kuantitas}', [CheckoutController::class, 'delete'])->name('checkout.delete');
 });
 
 ?>

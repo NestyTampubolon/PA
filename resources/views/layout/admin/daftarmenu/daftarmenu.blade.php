@@ -22,6 +22,7 @@
                                 <th>Harga</th>
                                 <th>Gambar</th>
                                 <th>Kategori</th>
+                                <th>Stok</th>
                                 <th>Action</th>
                             </tr><?php $nomor = 1;?>
                         </thead>
@@ -34,6 +35,7 @@
                                 <td>@currency($produk->harga)</td>
                                 <td><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="80px" height="80px" alt="" data-bs-toggle="modal" data-bs-target="#myModals{{$produk->id_produk}}"></td>
                                 <td>{{$produk->kategori}}</td>
+                                <td>{{$produk->stok}}</td>
                                 <td><button type="button"  class="btn btn-primary"  onclick="window.location.href='edit/{{$produk->id_produk}}'"><i class="fas fa-edit"></i>
                                         Edit</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal{{$produk->id_produk}}"><i class="fas fa-trash-alt"></i>
@@ -51,8 +53,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-
                                     <!-- Modal -->
                                     <div class="modal fade" id="Modal{{$produk->id_produk}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
@@ -74,8 +74,6 @@
                                                 <div class="col-sm-3">Gambar</div>
                                                 <div class="col-sm-9 text-left"><img src="{{url('gambarmenu/'.$produk->gambar)}}" width="80px" height="80px" alt="" border="1px" data-bs-toggle="modal" data-bs-target="#myModals{{$produk->id_produk}}"></div>
                                             </div>
-                                        
-                                            <p class="font-weight-bold">Anda yakin menghapusnya?</p>   
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

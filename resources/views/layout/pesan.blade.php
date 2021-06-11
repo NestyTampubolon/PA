@@ -29,15 +29,20 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-
                                         <h4>@currency($produks->harga)</h4>
                                         <input type="hidden" name="harga" required="required" class="form-control" value="{{$produks->harga}}">
-
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="quantity">Kuantitas</label>
-                                        <input type="number" name="quantity" required="required" class="form-control" value="">
-  
+                                        <h6>tersisa : &nbsp   {{$produks->stok}}</h6>
+                                    </div>
+                                    <div class="mb-3 row justify-content-center">
+                                        <label for="usia" class="col-sm-4 col-form-label text-left">Kuantitas</label>
+                                        <div class="col-sm-5">
+                                            <input class="form-control"  type="number" width="60px" name="quantity" max="{{$produks->stok}}" id="quantity" class="form-control"  >
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class=" col-form-label"></label>
+                                        </div>    
                                     </div>
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">

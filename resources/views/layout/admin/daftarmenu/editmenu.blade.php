@@ -7,9 +7,6 @@
     <div class="card">
     <h1>Edit Menu</h1>
         <div class="card-body">
-
-
-        
             <form action="{{route('daftarmenu.update',$editproduks->id_produk)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
                 <div class="mb-3 row">
@@ -28,7 +25,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Gambar</label>
                     <div class="col-sm-9">
-                        <input class="form-control" id="formFileMultiple" required="required"  name="gambar" type="file" accept="jpg" id="formFileMultiple" multiple value="{{$editproduks->gambar}}" >
+                        <input class="form-control" id="formFileMultiple"   name="gambar" type="file" accept="jpg" id="formFileMultiple" multiple value="{{$editproduks->gambar}}" >
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -51,6 +48,12 @@
                             <option value="dessert-salad">Dessert/Salad</option>
                            
                         </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Stok</label>
+                    <div class="col-sm-9">
+                        <input type="number" required="required" name="stok" class="form-control" value="{{$editproduks->stok}}">
                     </div>
                 </div>
 				<button type="button" class="btn btn-danger" onclick="window.location.href='/daftarmenu'"><i class="fas fa-times"></i> Batal</button>

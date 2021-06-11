@@ -25,7 +25,7 @@ class LaporankeuanganController extends Controller
                 ->where('pemesanan.keterangan','=','Selesai')            
                 ->get();
        
-        return view('layout.admin.laporankeuangan',compact('laporan','totaljoin'));
+        return view('layout.admin.laporankeuangan.laporankeuangan',compact('laporan','totaljoin'));
     }
 
     public function update(Request $request, $id_laporan){

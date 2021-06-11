@@ -52,6 +52,12 @@
                         </select>
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Stok</label>
+                    <div class="col-sm-9">
+                        <input type="number" required="required" id="stok" name="stok" class="form-control" >
+                    </div>
+                </div>
 				<button type="button" class="btn btn-danger" onclick="window.location.href='/daftarmenu'"><i class="fas fa-times"></i> Batal</button>
 				<button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Tambah</button>
             </form>

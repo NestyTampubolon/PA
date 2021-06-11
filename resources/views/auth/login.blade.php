@@ -4,7 +4,18 @@
 
     <!-- ======= Menu Section ======= -->
       <div class="container" data-aos="fade-up">
-
+      @if(session('error'))
+          <div class="dropdown">
+              <a class="dropdown">
+              <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <div>
+              Hallo,{{session('error')}}
+            </div>
+            
+          </div>
+              </a>                   
+            </div>
+    @endif
         <div class="section-title">
         </div>
              
