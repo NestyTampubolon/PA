@@ -22,14 +22,18 @@ class DaftarpemesananController extends Controller
 
     public function detail($id_pemesanan){
         $pemesanandetail = PemesananDetail::find($id_pemesanan);
-        $produk = Produk::all();
+        $pemesanan = DB::table('pemesanan')
+                    ->join('users', 'users.user_id','=','pemesanan.id_customer')
+                    ->select('pemesanan.*','users.name','users.nomor_handphone')
+                    ->where('pemesanan.id_pemesanan','=',$id_pemesanan)
+                    ->get();
         $daftarjoin = DB::table('pemesanan_detail')
                     ->join('pemesanan', 'pemesanan_detail.id_pemesanan','=','pemesanan.id_pemesanan')
                     ->join('produk','pemesanan_detail.id_produk','=','produk.id_produk')
                     ->select('pemesanan_detail.*','produk.*')
                     ->where('pemesanan_detail.id_pemesanan','=',$id_pemesanan)
                     ->get();
-        return view('layout.karyawan.detailpemesanan',compact('pemesanandetail','produk','daftarjoin'));
+        return view('layout.karyawan.detailpemesanan',compact('pemesanandetail','pemesanan','daftarjoin'));
     }
 
     public function update(Request $request, $id_pemesanan){

@@ -55,8 +55,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <p>OVO</p>
-                    <p>DANA</p>
+                    Saat ini , Toba Tio hanya menyediakan COD (Bayar di Tempat)
 
                     </div>
                     <div class="modal-footer">

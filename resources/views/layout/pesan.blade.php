@@ -38,7 +38,7 @@
                                     <div class="mb-3 row justify-content-center">
                                         <label for="usia" class="col-sm-4 col-form-label text-left">Kuantitas</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control"  type="number" width="60px" name="quantity" max="{{$produks->stok}}" id="quantity" class="form-control"  >
+                                            <input class="form-control"  type="number" required width="60px" name="quantity" max="{{$produks->stok}}" id="quantity" class="form-control"  >
                                         </div>
                                         <div class="col-sm-3">
                                             <label class=" col-form-label"></label>
